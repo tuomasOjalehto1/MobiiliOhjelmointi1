@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/aloitus">
+
+    <fragment
+        android:id="@+id/aloitus"
+        android:name="com.example.matikkapeli.screens.aloitus.Aloitus"
+        android:label="fragment_aloitus"
+        tools:layout="@layout/fragment_aloitus" >
+        <action
+            android:id="@+id/action_aloitus_to_peli2"
+            app:destination="@id/peli" />
+        <action
+            android:id="@+id/action_aloitus_to_about"
+            app:destination="@id/about" />
+        <action
+            android:id="@+id/action_aloitus_to_saannot"
+            app:destination="@id/saannot" />
+    </fragment>
+    <fragment
+        android:id="@+id/peli"
+        android:name="com.example.matikkapeli.screens.peli.Peli"
+        android:label="fragment_peli"
+        tools:layout="@layout/fragment_peli" >
+        <action
+            android:id="@+id/action_peli_to_loppu"
+            app:destination="@id/loppu"
+            app:popUpTo="@id/aloitus" />
+    </fragment>
+    <fragment
+        android:id="@+id/about"
+        android:name="com.example.matikkapeli.screens.about.About"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/saannot"
+        android:name="com.example.matikkapeli.screens.saannot.Saannot"
+        android:label="fragment_saannot"
+        tools:layout="@layout/fragment_saannot" />
+    <fragment
+        android:id="@+id/loppu"
+        android:name="com.example.matikkapeli.screens.loppu.Loppu"
+        android:label="fragment_loppu"
+        tools:layout="@layout/fragment_loppu" >
+        <action
+            android:id="@+id/action_loppu_to_aloitus"
+            app:destination="@id/aloitus" />
+    </fragment>
+</navigation>
